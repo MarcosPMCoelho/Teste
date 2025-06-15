@@ -1,5 +1,6 @@
 ﻿using GanhoCapital.Entity;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Net;
 using System.Reflection;
@@ -117,11 +118,8 @@ namespace GanhoCapital
                     if (item.quantity * item.unitcost <= 20000)
                     {
                         if (item.unitcost < precomedio)
-                        {
-                            //prejuizo
                             prejuizo = prejuizo + ((precomedio - item.unitcost) * item.quantity);
-                        }
-                        
+
                         item.tax = 0;
                         taxas.Add(new Taxas { tax = item.tax });
                         continue;
