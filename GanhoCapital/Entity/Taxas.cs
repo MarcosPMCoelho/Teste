@@ -8,6 +8,6 @@ namespace GanhoCapital.Entity
 {
     internal class Taxas
     {
-        public decimal? tax { get; set; } = 0;
+        public decimal? taxa { get; set; } = 0;
     }
 }

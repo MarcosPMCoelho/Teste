@@ -33,15 +33,20 @@ namespace Teste
                             "{ \"operation\":\"sell\", \"unit-cost\":15.00, \"quantity\": 50}, " +
                             "{ \"operation\":\"sell\", \"unit-cost\":15.00, \"quantity\": 50}]";
 
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq01.Json");
+            sw.Write(json);
+            sw.Close();
+
             Console.WriteLine("Caso #1 - ok");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq01.Json"));
         }
 
         public static void Simulacao2()
         {
             //Case #2
             //buy 10.00 10000 0 Comprar ações não paga imposto
-            
+
             //sell 20.00 5000 10000
             //Lucro de R$ 50000: 20 % do lucro corresponde a R$ 10000 e não possui prejuízo anterior
             //sell 5.00 5000 0 Prejuízo de R$ 25000: não paga imposto
@@ -59,8 +64,11 @@ namespace Teste
                             "{ \"operation\":\"sell\", \"unit-cost\":20.00, \"quantity\": 5000}, " +
                             "{ \"operation\":\"sell\", \"unit-cost\":5.00, \"quantity\": 5000}]";
 
-            Console.WriteLine("Caso #2 - ok");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq02.Json");
+            sw.Write(json);
+            sw.Close();
+
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq02.Json"));
         }
 
         public static void Simulacao1_2()
@@ -91,8 +99,10 @@ namespace Teste
                             "{ \"operation\":\"sell\", \"unit-cost\":5.00, \"quantity\": 5000}]";
 
 
-            Console.WriteLine("Caso #1 + #2 - ok");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq1_2.Json");
+            sw.Write(json);
+            sw.Close();
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq1_2.Json"));
         }
 
         public static void Simulacao3()
@@ -135,7 +145,10 @@ namespace Teste
 
 
             Console.WriteLine("Caso #3 - ok");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq3.Json");
+            sw.Write(json);
+            sw.Close();
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq3.Json"));
 
         }
 
@@ -180,7 +193,10 @@ namespace Teste
 
 
             Console.WriteLine("Caso #4");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq4.Json");
+            sw.Write(json);
+            sw.Close();
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq4.Json"));
 
         }
 
@@ -216,7 +232,10 @@ namespace Teste
                             "{ \"operation\":\"sell\", \"unit-cost\":15.00, \"quantity\": 10000}, " +
                             "{ \"operation\":\"sell\", \"unit-cost\":25.00, \"quantity\": 5000}]";
             Console.WriteLine("Caso #5 - ok");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq5.Json");
+            sw.Write(json);
+            sw.Close();
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq5.Json"));
         }
 
         public static void Simulacao6()
@@ -246,7 +265,10 @@ namespace Teste
                         "{ \"operation\":\"sell\", \"unit-cost\":25.00, \"quantity\": 1000}]";
 
             Console.WriteLine("Caso #6 - ok");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq6.Json");
+            sw.Write(json);
+            sw.Close();
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq6.Json"));
         }
 
         public static void Simulacao7()
@@ -276,7 +298,10 @@ namespace Teste
                         "{ \"operation\":\"sell\", \"unit-cost\":30.00, \"quantity\": 650}]";
 
             Console.WriteLine("Caso #7");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq7.Json");
+            sw.Write(json);
+            sw.Close();
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq7.Json"));
         }
 
         public static void Simulacao8()
@@ -295,7 +320,11 @@ namespace Teste
                      "{ \"operation\":\"sell\", \"unit-cost\":50.00, \"quantity\": 10000}]";
 
             Console.WriteLine("Caso #8");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            // Console.WriteLine(GanhoCapital.Ganho.Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq8.Json");
+            sw.Write(json);
+            sw.Close();
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq8.Json"));
         }
 
         internal static void Simulacao9()
@@ -324,17 +353,12 @@ namespace Teste
 
 
             Console.WriteLine("Caso #9");
-            Console.WriteLine(new GanhoCapital.Ganho().Executar(json));
+            StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq9.Json");
+            sw.Write(json);
+            sw.Close();
+            Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq9.Json"));
         }
 
-        internal static void Simulacao10()
-        {
-            string json = "[{ \"operation\": \"buy\", \"unit-cost\": 20.00, \"quantity\": 10}, " +
-                         "{ \"operation\": \"sell\", \"unit-cost\": 20.00, \"quantity\": 5}, " +
-                         "{ \"operation\": \"buy\", \"unit-cost\": 10.00, \"quantity\": 5}]";
-
-            new GanhoCapital.Ganho().Executar(json);
-        }
 
       
     }

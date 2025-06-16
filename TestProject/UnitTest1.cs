@@ -12,8 +12,8 @@
             lista.Add(new() { operation = "sell", unitcost = 20.00m, quantity = 5 });
             lista.Add(new() { operation = "buy", unitcost = 10.00m, quantity = 5 });
 
-            GanhoCapital.Ganho calcular = new ();
-            decimal valor = calcular.CalcularMediaPonderada(lista);
+            
+            decimal valor = GanhoCapital.Ganho.CalcularMediaPonderada(lista);
 
             Assert.Equal(15m, valor);
         }
