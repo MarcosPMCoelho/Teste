@@ -68,6 +68,7 @@ namespace Teste
             sw.Write(json);
             sw.Close();
 
+            Console.WriteLine("Caso #2 - ok");
             Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq02.Json"));
         }
 
@@ -102,6 +103,7 @@ namespace Teste
             StreamWriter sw = new StreamWriter(@"D:\Arquivos\Arq1_2.Json");
             sw.Write(json);
             sw.Close();
+            Console.WriteLine("Caso #1_2 - ok");
             Console.WriteLine(GanhoCapital.Ganho.ExecutarArq(@"D:\Arquivos\Arq1_2.Json"));
         }
 
